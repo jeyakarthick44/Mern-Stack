@@ -2,22 +2,16 @@ const express = require('express')
 const env = require('dotenv')
 const app = express();
 const port=3000;
-const bodyParser= require('body-parser')
 
 env.config();
 
-app.use(bodyParser());
 
 app.get('/', (req, res , next) => {
-    res.status(200).json({
-        message:'hi srija , i love you'
-    });
+    res.send("hi srija")
   })
 
 app.post('/data', (req, res , next) => {
-    res.status(200).json({
-        message:req.body
-    });
+    res.send("post request")
   })
 
 app.listen(port, () => {
